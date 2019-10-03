@@ -21,6 +21,6 @@ If you type one there is not on the list, you can add a new item.
 
 The item will be added to 'My fridge' tab, where you can see, edit and remove items.
 
-Login with:
+Login with:  
 Username: test  
 Password: 123 
