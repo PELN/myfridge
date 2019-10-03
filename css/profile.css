@@ -1,0 +1,222 @@
+#sessionMessage{
+    height: 6vh;
+    width: 60vw;
+    padding: 10px 0px 0px 13px;
+    margin: 0px 0px 20px 0px;
+    background-color: rgb(137, 230, 158);
+    border-radius: 5px;
+    color: darkslategray;
+}
+
+
+/* ************ ADD ITEMS ************** */
+#addItem.page{
+    padding: 20px 2%;
+}
+
+#addItem{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+}
+
+#addItemContainer{
+    width: 100%;
+}
+#addItemSection{
+    width: 85vw;
+    padding: 20px;
+    background-color: rgba(253, 253, 253, 0.945);
+    box-shadow: 2px 2px 4px -2px rgba(0,0,0,0.40);
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+
+
+/************ SEARCHBAR ************/
+
+#searchContainer{
+    width: 400px;
+    height: auto;
+    margin: 250px auto;
+}
+
+#searchResults{
+    z-index: 1;
+    position: absolute;
+    left: 21%;
+    box-shadow: 1px 2px 3px -2px rgba(0,0,0,0.40);
+    top: 153.5px;
+    width: 58vw;
+    background-color: white;
+    padding: 10px;
+}
+#searchResults>div{
+    height: auto;
+    background-color: rgba(255,255,255,0.5);
+    background-color: white;
+    height: auto;
+    padding: 10px;
+}
+#searchResults>div:hover{
+    background-color: rgb(245, 245, 245);
+}
+
+#searchBar{
+    position: relative;
+}
+#searchBar svg{
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* ************ FRIDGE ************** */
+
+#fridge.page{
+    padding: 20px 5%;
+}
+
+#listOfItems{
+    width: 90vw;
+    background-color: rgba(253, 253, 253, 0.945);
+    box-shadow: 2px 2px 4px -2px rgba(0,0,0,0.40);
+    border-radius: 10px;
+}
+
+
+table > tbody > tr > td {
+    padding: 12px 8px !important;
+    vertical-align: middle;
+}
+th {
+    text-align: inherit;
+    height: 45px;
+    padding-left: 10px;
+}
+
+.tableBtn{
+    border-radius: 15px;
+    padding: 5px 20px 5px 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(151,221,176,1) 0%, rgba(5,175,157,1) 100%);
+    color: white;
+    border: none;    
+    margin: 6px;
+}
+.tableBtn:hover{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+/* ************ PROFILE ************** */
+#btnContainer {
+    display: flex;
+}
+
+#logoutBtn{
+    width: 150px;
+    border-radius: 15px;
+    padding: 5px 20px 5px 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(151,221,176,1) 0%, rgba(5,175,157,1) 100%);
+    justify-content: center;
+    display: flex;
+    margin-right: 20px;
+}
+#logoutBtn a{
+    color: white;
+}
+#logoutBtn:hover{
+    opacity: 0.8;
+    transition: .2s ease;
+}
+
+#deleteProfileBtn{
+    width: 200px;
+    border-radius: 15px;
+    padding: 5px 20px 5px 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(151,221,176,1) 0%, rgba(5,175,157,1) 100%);
+    justify-content: center;
+    display: flex;
+}
+#deleteProfileBtn a{
+    color: white;
+}
+#deleteProfileBtn:hover{
+    opacity: 0.8;
+    transition: .2s ease;
+} 
+
+/* .sessionMessage{
+    width:80vw;
+    height: 5vh;
+    background-color: red;
+    z-index: 999;
+    position: absolute;
+    top: 5px;
+    color: white;
+} */
+
+
+/***************** add category in add-new-item box ******************/
+#selectCategory.form-control{
+    width: 45%;
+    float: left;
+    margin-right: 20px;
+}
+#submitCategory.form-control{
+    width: 15%;
+   
+}
+
+#expiredItemsContainer{
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+#overviewBtn {
+    width: 30vw;
+    margin-top: 35px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 600px){
+   
+
+  
+}
+
+@media only screen and (min-width: 768px) {
+    #addItemSection{
+        width: 60vw;
+    }
+
+}
+
+@media only screen and (min-width: 992px) {
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+
+}
+
+@media only screen and (min-width: 1824px) {
+
+}
