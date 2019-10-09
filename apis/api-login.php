@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if (isset($_POST['submitLogin'])){
     require_once __DIR__.'/../connect.php';
@@ -25,7 +24,7 @@ if (isset($_POST['submitLogin'])){
             foreach($aRows as $aRow){
                 // echo json_encode($aRow);
                 if(password_verify($sPassword, $aRow->password)){
-                    
+                    session_start();
                     // set user session data
                     $_SESSION['sUserId'] = $aRow->id;
                     $_SESSION['sUser'] = $aRow->username;
@@ -42,12 +41,9 @@ if (isset($_POST['submitLogin'])){
         $_SESSION['loginMessage'] = "Wrong username or password";
         header('location:../index.php');
         exit;
-        
-
     }
     
     catch( PDOEXception $ex){
         echo $ex;
     }
-
 }

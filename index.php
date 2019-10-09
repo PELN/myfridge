@@ -1,15 +1,13 @@
 <?php
-session_start();
-$sLinkToCss = '<link rel="stylesheet" href="css/login.css">';
+// session_start();
 require_once 'top.php';
+// if(isset($_SESSION['sUserId'])){
+//     //not logged in
+//     header('Location: profile.php');
+//     exit();
+// }
 
-if(isset($_SESSION['sUserId']))
-{
-    //not logged in
-    header('Location: profile.php');
-    exit();
-}
-
+$sLinkToCss = '<link rel="stylesheet" href="css/login.css">';
 ?>
 
 <div id="login" class="page">
@@ -35,7 +33,6 @@ if(isset($_SESSION['sUserId']))
 
 
 <div id="signup" class="page">
-
     <div id="signupContainer">
         <div id="txtContainer">
             <h1>SIGN UP</h1>
@@ -58,14 +55,11 @@ if(isset($_SESSION['sUserId']))
             <input name="signupConfirmPassword" type="text" placeholder="confirm password" class="form-control">
             <input name="submitSignup" id="signupBtn" type="submit" value="REGISTER" class="form-control">
         </form>
-
     </div>
 </div>
 
 
-
-
-<?php 
+<?php
 $sLinkToScript = '<script src="js/index.js"></script>';
 require_once 'bottom.php';
 ?>

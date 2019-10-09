@@ -1,28 +1,22 @@
 <?php
 session_start();
-$sLinkToCss = '<link rel="stylesheet" href="css/profile.css">';
-require_once 'top.php';
-
-$sUserId = $_SESSION['sUserId'];
-$sUser = $_SESSION['sUser'];
-$sEmail = $_SESSION['sEmail'];
-
 if(!isset($_SESSION['sUserId']))
 {   //not logged in
     header('Location: index.php');
     exit();
 }
+$sLinkToCss = '<link rel="stylesheet" href="css/profile.css">';
+require_once 'top.php';
+$sUserId = $_SESSION['sUserId'];
+$sUser = $_SESSION['sUser'];
+$sEmail = $_SESSION['sEmail'];
 ?>
 
-
-
 <div id="fridge" class="page">
-    
     <div id="fridgeContainer">
         <h1>MY FRIDGE</h1>
 
         <div id="listContainer">
-
             <table id="listOfItems" rules=rows class="table-hover table-striped table-condensed">
 
             <?php
@@ -80,7 +74,6 @@ if(!isset($_SESSION['sUserId']))
                     }
                 }
             ?>
-
                 <thead>
                     <tr>
                         <th>Item</th>
@@ -89,60 +82,10 @@ if(!isset($_SESSION['sUserId']))
                         <th>Actions</th>
                     </tr>
                 </thead>
-
             </table>
+        </div>
+
         
-        </div>
-
-        <button id="overviewBtn" class="form-control tableBtn">Overview of expired items</button>
-       
-        <div id="expiredItemsContainer">
-            <h2>Expired items</h2>
-
-            <table id="listOfItems" rules=rows class="table-hover table-striped table-condensed">
-                <thead>
-                    <tr>
-                        <th>Item</th>
-                        <th>Expiry date</th>
-                        <th>Notes</th>
-                    </tr>
-                </thead>
-            <?php
-                require_once __DIR__.'/connect.php';
-                $stmt = $db->prepare("SELECT * FROM users_expired_items WHERE id = $sUserId");
-                $stmt->execute();
-                $aRows = $stmt->fetchAll();
-
-                $todayTime = time();
-
-                foreach($aRows as $aRow){
-                    $expTime=strtotime($aRow->expiry_day);
-
-                    if($todayTime>$expTime){
-                        $timeDifference = $expTime-$todayTime;
-                        //ceil = round number up, no decimals
-                        $daysLeft = abs(ceil($timeDifference / 60 / 60 / 24));
-                        if($daysLeft == 0){
-                            $expiryMessage = "expires today";
-                        }else{
-                            $expiryMessage = "expired $daysLeft days ago";
-                        }
-                     }
-
-                    echo "
-                        <tbody>
-                            <tr>
-                                <td>$aRow->name</td>
-                                <td>$expiryMessage</td>
-                                <td>$aRow->note</td>
-                            </tr>
-                        </tbody>
-                    ";
-                }
-            ?>
-            </table>
-        </div>
-
     </div>
 
 
@@ -167,14 +110,14 @@ if(!isset($_SESSION['sUserId']))
                             $stmt->execute();
                             $aRows = $stmt->fetchAll();
                         ?>
-                            <select id="selectName" name="selectName" class="form-control">
-                                <option disabled selected value>--------- Select new item ---------</option>
-                                <?php
-                                    foreach($aRows as $aRow){
-                                        echo "<option value=\"$aRow->id\">$aRow->name</option>";
-                                    }
-                                ?>
-                            </select>
+                        <select id="selectName" name="selectName" class="form-control">
+                            <option disabled selected value>--------- Select new item ---------</option>
+                            <?php
+                                foreach($aRows as $aRow){
+                                    echo "<option value=\"$aRow->id\">$aRow->name</option>";
+                                }
+                            ?>
+                        </select>
 
                         <label for="editExpiryDay">Expiry date</label>
                         <input type="date" id="editExpiryDay" name="editExpiryDay" value="" min="2019-05-08" max="2030-12-31" class="form-control">
@@ -182,13 +125,10 @@ if(!isset($_SESSION['sUserId']))
                         <textarea name="editItemNotes" id="editItemNotes" value="" cols="30" rows="4" placeholder="notes" class="form-control"></textarea>
                         <input name="addEditedItem" id="addEditedItem" type="submit" value="EDIT ITEM" class="form-control">
                     </div>
-
                 </form>
-
             </div>
         </div>
     </div>
-
 </div>
 
 
@@ -265,13 +205,7 @@ if(!isset($_SESSION['sUserId']))
             </form>
         </div>
     </div>
-
 </div>
-
-
-
-
-
 
 
 <div id="profile" class="page">
@@ -288,10 +222,7 @@ if(!isset($_SESSION['sUserId']))
 
 </div>
 
-
-
-
-<?php 
+<?php
 $sLinkToScript = '<script src="js/profile.js"></script>';
 require_once 'bottom.php';
 ?>

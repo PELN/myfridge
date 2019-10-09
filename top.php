@@ -88,61 +88,26 @@
       transition: .3s ease;
   }
 
-
- /* .form-control:focus {
-    border-color: #FF0000;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
-  } */
-
-  @media only screen and (min-width: 600px){
-  
-  
-  }
-
-  @media only screen and (min-width: 768px) {
-
-  
-  }
-
-  @media only screen and (min-width: 992px) {
-
-  
-  }
-
-
-  @media only screen and (min-width: 1200px) {
-  
-  
-  }
-
-  @media only screen and (min-width: 1824px) {
-  
-  }
-
-
 </style>
 </head>
 
 <body>
-
 <?php
 if(isset($_SESSION['sUserId'])){
-    echo '
-        <nav>
-            <div><img id="logo" src="imgs/refrigerator-icon.png"></div>
-            <div class="navLink active" data-showPage="fridge">MY FRIDGE</div>
-            <div class="navLink" data-showPage="addItem">ADD ITEM</div>
-            <div class="navLink" data-showPage="profile">PROFILE</div>
-        </nav>';
-
-
+  echo '
+    <nav>
+        <div><img id="logo" src="imgs/refrigerator-icon.png"></div>
+        <div class="navLink active" data-showPage="fridge">MY FRIDGE</div>
+        <div class="navLink" data-showPage="addItem">ADD ITEM</div>
+        <div class="navLink" data-showPage="profile">PROFILE</div>
+    </nav>';
 }else{
-    echo '
-        <nav>
-            <div><img id="logo" src="imgs/refrigerator-icon.png"></div>
-            <div class="navLink active" data-showPage="login">LOGIN</div>
-            <div class="navLink" data-showPage="signup">SIGNUP</div>
-        </nav>';
+  echo '
+    <nav>
+        <div><img id="logo" src="imgs/refrigerator-icon.png"></div>
+        <div class="navLink active" data-showPage="login">LOGIN</div>
+        <div class="navLink" data-showPage="signup">SIGNUP</div>
+    </nav>';
 }
 ?>
 
